@@ -2,7 +2,7 @@
 
 // For example:
 
-// [1, 2, 3] --> [2, 4, 6]
+// [1, 2, 3] --> [2, 4, 6]git
 
 //P: Is it allows going to be integers? Are we going to be given any special characters? An empty arr ever?
 //R: Return a new arr with each value doubled
@@ -12,8 +12,13 @@
 //P:
 //Make a function that takes in an array
 function doubled(arr) {
-  return arr.map((e) => e * 2);
+  if (arr.length === 0 || arr === undefined) {
+    console.log("Array is undefined");
+  } else {
+    return arr.map((e) => e * 2);
+  }
 }
 //map through array and multiply each element by 2.  also return lol
 doubled([1, 2, 3]);
 console.log(doubled([2, 3, 4]), [4, 6, 8]);
+console.log(doubled([]));
