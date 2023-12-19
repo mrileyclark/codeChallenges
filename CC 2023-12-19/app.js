@@ -1,19 +1,13 @@
-// / 12/15/23******************
+// Given an array of integers, remove the smallest value. Do not mutate the original array/list. If there are multiple elements with the same value, remove the one with a lower index. If you get an empty array/list, return an empty array/list.
 
-// Finish the solution so that it sorts the passed in array of numbers. If the function passes in an empty array or null/nil value then it should return an empty array.
+// Don't change the order of the elements that are left.
 
-// For example:
+// Examples
+// * Input: [1,2,3,4,5], output = [2,3,4,5]
+// * Input: [5,3,2,1,4], output = [5,3,2,4]
+// * Input: [2,2,1,2,1], output = [2,2,2,1]
 
-// solution([1, 2, 10, 50, 5]); // should return [1,2,5,10,50]
-// solution(null); // should return []
-
-function solution(nums) {
-  if (nums === [] || nums === null) {
-    return [];
-  } else {
-    return nums.sort((a, b) => a - b);
-  }
+function removeSmallest(numbers) {
+  let indexOfMin = numbers.indexOf(Math.min(...numbers));
+  return [...numbers.slice(0, indexOfMin), ...numbers.slice(indexOfMin + 1)];
 }
-
-// console.log(solution([]))
-// console.log(solution([1, 2, 10, 50, 5]))
